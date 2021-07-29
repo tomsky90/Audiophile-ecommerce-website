@@ -1,10 +1,10 @@
-
-import './App.css';
+import Nav from './components/nav/Nav'
+import './styles/App.scss';
 
 function App() {
   return (
     <div className="App">
-      <h1>dzilam</h1>
+      <Nav/>
     </div>
   );
 }
