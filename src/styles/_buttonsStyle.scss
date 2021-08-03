@@ -1,0 +1,26 @@
+.nav-link-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
+    color: #4b4747;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+
+}
+
+.nav-link-btn::after {
+    content: '>';
+    position: absolute;
+    top: -2px;
+    right: -30px;
+    font-size: 30px;
+    color: $Primary-Orange;
+}
+
+.link-btn-orange {
+    background-color: $Primary-Orange;
+    padding: 10px 20px;
+    color: white;
+}

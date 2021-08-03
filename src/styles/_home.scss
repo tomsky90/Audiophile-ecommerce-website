@@ -1,0 +1,39 @@
+.fetured-headphones-wrapper {
+    position: relative;
+}
+
+.fetured-headphones-img-container {
+    width: 100%;
+    & img {
+        width: 100%;
+    }
+}
+
+.fetured-headphones-description {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.fetured-hedphones__overline {
+    margin-top: 180px;
+    margin-bottom: 20px;
+    color: #f2f2f2a2;
+}
+
+.fetured-hedphones__title {
+    margin-bottom: 30px;
+    color: white;
+
+}
+
+.fetured-hedphones__sub-title {
+    color: #f2f2f2a2;
+    font-size: 13px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
