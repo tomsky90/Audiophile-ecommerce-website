@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import PageNav from '../pageNav/PageNav'
+import FeaturedProducts from '../featuredProducts/FeaturedProducts'
+
 
 import headerImg from '../../assets/home/mobile/image-header.jpg'
 
@@ -9,6 +11,7 @@ import headerImg from '../../assets/home/mobile/image-header.jpg'
  const Home = () => {
      return ( 
          <div>
+             
              <div className='fetured-headphones-wrapper'>
              <div className='fetured-headphones-img-container'>
                  <img src={`${headerImg}`} alt="XX99 Mark II HeadphoneS"/>
@@ -21,6 +24,7 @@ import headerImg from '../../assets/home/mobile/image-header.jpg'
              </div>
 
              <PageNav/>
+             <FeaturedProducts/>
 
              </div>
              
