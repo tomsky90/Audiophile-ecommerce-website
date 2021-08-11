@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import PageNav from '../pageNav/PageNav'
 import FeaturedProducts from '../featuredProducts/FeaturedProducts'
+import About from '../about/About'
 
 
 import headerImg from '../../assets/home/mobile/image-header.jpg'
@@ -25,6 +26,7 @@ import headerImg from '../../assets/home/mobile/image-header.jpg'
 
              <PageNav/>
              <FeaturedProducts/>
+             <About/>
 
              </div>
              

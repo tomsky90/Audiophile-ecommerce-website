@@ -1,0 +1,27 @@
+.about {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    text-align: center;
+    &__img-container {
+        width: 100%;
+        & img {
+            width: 100%;
+            border-radius: 8px;
+        }
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 1.6;
+        letter-spacing: 1px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        & span {
+            color: $Primary-Orange
+        }
+    }
+    &__description {
+        color: $Primary-Dark;
+    }
+}
