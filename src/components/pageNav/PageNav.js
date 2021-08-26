@@ -10,7 +10,7 @@ const PageNav = () => {
     return ( <div>
         <nav className='page-nav'>
             
-            <ul>
+            <ul className='page-nav__list'>
                  <li className='page-nav__link-container'>
                    <img src={`${headphons}`} alt=" headphones"/>
                    <h6 className='page-nav__title'>headphons</h6>

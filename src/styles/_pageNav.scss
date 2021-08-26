@@ -12,14 +12,21 @@ a {
     padding-top: 100px;
     padding-bottom: 100px;
     background-color: $White;
-    & ul {
+    &__list {
         list-style-type: none;
+        @media (min-width: 600px)  {
+            display: flex;
+            justify-content: center;
+        }
     }
     &__title {
         position: absolute;
         left: 50%;
         top: 40%;
         transform: translateX(-50%);
+        @media (min-width: 600px)  {
+            top: 50%;
+        }
 
     }
     &__link-container {
@@ -31,8 +38,20 @@ a {
         margin-bottom: 100px;
         background-color: $Primary-Gray;
         border-radius: 5px;
+        @media (min-width: 600px) {
+            width: 30%;
+            height: 190px;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+       
         &:nth-last-child(1) {
             margin-bottom: 0;
+        }
+        &:nth-last-child(2) {
+            margin-left: 10px;
+            margin-right: 10px;
         }
         & img{
             position: absolute;
@@ -40,6 +59,12 @@ a {
             left: 50%;
             transform: translateX(-50%);
             width: 40%;
+            @media (min-width: 600px) {
+                width: 60%;
+            }
+            @media (min-width: 1000px) {
+                width: 40%;
+            }
         }
     }
 }

@@ -1,0 +1,125 @@
+.footer {
+    position: relative;
+    margin-top: 100px;
+    padding: 50px 0 30px 0;
+    background-color: $black;
+    text-align: center;
+    color: white;
+    @media (min-width: 700px) {
+        text-align: unset;
+    }
+    &__logo-container {
+        margin-bottom: 20px;
+        @media (min-width: 700px) {
+            margin-left: 5%;
+        }
+        @media (min-width: 1280px) {
+            width: 55%;
+            display: inline-flex;
+        }
+    }
+    &__text-wrapper {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: 700px) {
+            width: 85%;
+            margin-left: 5%;
+            margin-right: 0;
+        }
+        @media(min-width: 1280px) {
+            width: 50%
+        }
+    }
+    &__text {
+        font-weight: 200;
+        color: #979797;
+        margin-bottom: 30px;
+    }
+    &__copyright {
+        color: #979797;
+        margin-bottom: 30px;
+        
+        
+    }
+    &__social-wrapper {
+        width: 40%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: 700px) {
+            display: inline-flex;
+            margin-right: 0;
+            margin-left: 0;
+            justify-content: flex-end;
+        }
+        @media (min-width: 1280px) {
+           position: absolute;
+           right: 7%;
+           top: 55%;
+        }
+    }
+    &__social-link {
+        
+       @media (min-width: 700px) {
+           margin-left: 10px;
+       }
+       &:hover {
+        @media (min-width: 1280px) {
+            background-color: $Primary-Orange;
+        }
+    }
+    }
+    &__copyright-wrapper {
+        @media (min-width: 700px) {
+            display: inline-block;
+            width: 50%;
+            margin-left: 5%;
+            margin-right: 0;
+        }
+    }
+}
+
+.footer-decoration {
+    width: 101px;
+    height: 4px;
+    background-color: $Primary-Orange;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @media (min-width: 700px) {
+        left: 10%;
+    }
+}
+
+.footer-nav {
+    margin-bottom: 30px;
+    @media (min-width: 700px) {
+        display: flex;
+        margin-left: 7%;
+    }
+    @media (min-width: 1280px) {
+        display: inline-flex;
+    }
+}
+
+.footer-nav__link {
+    list-style: none;
+    margin-bottom: 10px;
+    & a {
+        color: white;
+        text-transform: uppercase;
+        &:hover {
+            @media (min-width: 1280px) {
+                color: $Primary-Orange;
+            }
+        }
+    }
+    @media (min-width: 700px) {
+        margin-right: 20px;
+    }
+    
+}

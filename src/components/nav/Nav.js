@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import hamburgerIcon from '../../assets/shared/tablet/icon-hamburger.svg';
 import logo from '../../assets/shared/desktop/logo.svg';
@@ -31,8 +31,37 @@ const Navigation = () => {
                     </div>
                 
                 <div className='logo-container'>
-                    <img src={`${logo}`} alt="logo"/>
+                <Link to='/'>
+                    <img src={logo} alt="logo"/>
+                </Link>
                 </div>
+
+                <nav className='desktop-nav'>
+                <ul className='desktop-nav__list'>
+                <li className="desktop-nav__link">
+                    <Link to='/'>
+                        Home
+                    </Link>
+                </li>
+                <li className="desktop-nav__link">
+                    <Link to='/headphones'>
+                        headphones
+                    </Link>
+                </li>
+                <li className="desktop-nav__link">
+                    <Link to='/speakers'>
+                        speakers
+                    </Link>
+                </li>
+                <li className="desktop-nav__link">
+                    <Link to='/earphones'>
+                        earphones
+                    </Link>
+                </li>
+            </ul>
+                </nav>
+
+
                 <div className='cart-icon__container'>
                     <img src={`${cartIcon}`} alt="cart icon"/>
                 </div>
@@ -68,6 +97,8 @@ const Navigation = () => {
                     </ul>
                         
                 </nav>
+
+                
                     
             
             

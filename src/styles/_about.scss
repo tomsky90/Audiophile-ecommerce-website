@@ -4,11 +4,33 @@
     margin-right: auto;
     margin-top: 100px;
     text-align: center;
+    @media (min-width: 1280px) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
     &__img-container {
         width: 100%;
+        @media (min-width: 1280px) {
+            width: 50%;
+        }
         & img {
             width: 100%;
             border-radius: 8px;
+        }
+    }
+    &__text-wrapper {
+        text-align: center;
+        @media (min-width: 700px) {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 1280px) {
+            width: 40%;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: left;
         }
     }
     &__title {
@@ -17,6 +39,13 @@
         letter-spacing: 1px;
         margin-top: 30px;
         margin-bottom: 30px;
+        @media (min-width: 700px) {
+            font-size: 40px;
+        }
+        @media (min-width: 1280px) {
+            line-height: 1;
+            margin-top: 150px;
+        }
         & span {
             color: $Primary-Orange
         }

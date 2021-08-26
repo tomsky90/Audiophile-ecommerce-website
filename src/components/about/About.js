@@ -1,12 +1,20 @@
 import React from 'react';
 
-import aboutMobileImg from '../../assets/shared/mobile/image-best-gear.jpg'
+import aboutImgMobile from '../../assets/shared/mobile/image-best-gear.jpg'
+import aboutImgTablet from '../../assets/shared/tablet/image-best-gear.jpg'
+import aboutImgDesktop from '../../assets/shared/desktop/image-best-gear.jpg'
 
 const About = () => {
     return ( 
         <section className='about'>
             <div className='about__img-container'>
-                <img src={aboutMobileImg} alt=""/>
+                <picture>
+                    <source media='(min-width: 1280px)' srcSet={aboutImgDesktop}/>
+                    <source media='(min-width: 700px)' srcSet={aboutImgTablet}/>
+                    <source media='(min-width: 360px)' srcSet={aboutImgMobile}/>
+                    <img src={aboutImgMobile} alt="man wearing headphons"/>
+                </picture>
+                
             </div>
             <div className='about__text-wrapper'>
                 <h1 className='about__title'>Bringing you the <span>best</span> audio gear</h1>
