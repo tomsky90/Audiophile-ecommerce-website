@@ -76,21 +76,21 @@ const Navigation = () => {
                          <li className='mobile-nav__link-container'>
                            <img src={`${headphons}`} alt=" headphones"/>
                            <h6 className='mobile-nav__title'>headphons</h6>
-                            <NavLink className='nav-link-btn' to='/headphones'>
+                            <NavLink className='nav-link-btn' to='/headphones' onClick={toggleMobileNav}>
                                <p className=''>shop</p> 
                             </NavLink>
                        </li>
                        <li className='mobile-nav__link-container'>
                            <img src={`${speakers}`} alt="speakers"/>
                            <h6 className='mobile-nav__title'>speakers</h6>
-                            <NavLink className='nav-link-btn' to='/speakers'>
+                            <NavLink className='nav-link-btn' to='/speakers' onClick={toggleMobileNav}>
                                <p className=''>shop</p> 
                             </NavLink>
                        </li>
                        <li className='mobile-nav__link-container'>
                            <img src={`${earphones}`} alt="earphones"/>
                            <h6 className='mobile-nav__title'>earphones</h6>
-                            <NavLink className='nav-link-btn' to='/earphones'>
+                            <NavLink className='nav-link-btn' to='/earphones' onClick={toggleMobileNav}>
                                <p className=''>shop</p> 
                             </NavLink>
                        </li>
