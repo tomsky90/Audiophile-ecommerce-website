@@ -2,6 +2,8 @@
 
 a {
     text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 
@@ -32,7 +34,7 @@ a {
     &__link-container {
         position: relative;
         width: 90%;
-        height: 217px;
+        height: 200px;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 100px;

@@ -1,8 +1,10 @@
 import React from 'react';
 
-import aboutImgMobile from '../../assets/shared/mobile/image-best-gear.jpg'
-import aboutImgTablet from '../../assets/shared/tablet/image-best-gear.jpg'
-import aboutImgDesktop from '../../assets/shared/desktop/image-best-gear.jpg'
+import aboutImgMobile from '../../assets/shared/mobile/image-best-gear.jpg';
+import aboutImgTablet from '../../assets/shared/tablet/image-best-gear.jpg';
+import aboutImgDesktop from '../../assets/shared/desktop/image-best-gear.jpg';
+
+
 
 const About = () => {
     return ( 

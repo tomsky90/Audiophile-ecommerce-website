@@ -6,13 +6,14 @@ import PageNav from '../pageNav/PageNav';
 import About from '../about/About';
 import Footer from '../footer/Footer';
 
-import './categoryPage.scss'
+
 
 const CategoryPage = ({match}) => {
     const [categoryItems, setCategoryItems] = useState([]);
 
     useEffect(() => {
-        getCategory()
+        getCategory();
+        window.scrollTo(0,0);
     }, [match.params.category])
 
     const getCategory = () => {
@@ -23,6 +24,7 @@ const CategoryPage = ({match}) => {
                 const categoryList = data.filter(item => item.category === match.params.category).reverse();
                 
                 setCategoryItems(categoryList)
+               
                 
             })
     }
@@ -42,7 +44,7 @@ const CategoryPage = ({match}) => {
                 {item.new && <p className='overline '>new product</p>}
                 <h1>{item.name}</h1>
                 <p className='product-description'>{item.description}</p>
-                <Link className='link-btn-orange' to='product'> see product</Link>
+                <Link className='link-btn-orange' to={`category/${item.slug}`}> see product</Link>
             
             </div>
             

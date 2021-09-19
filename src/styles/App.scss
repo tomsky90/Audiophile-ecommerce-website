@@ -4,9 +4,12 @@
 @import 'nav.scss';
 @import 'pageNav.scss';
 @import 'home.scss';
-@import 'feturedProducts.scss';
+@import 'featuredProducts';
+@import 'categoryPage';
+@import 'productPage';
 @import 'about.scss';
 @import 'footer.scss';
+
 
 * {
     margin: 0;

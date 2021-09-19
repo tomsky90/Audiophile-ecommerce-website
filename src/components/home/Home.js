@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import PageNav from '../pageNav/PageNav'
+import PageNav from '../pageNav/PageNav';
 import FeaturedProducts from '../featuredProducts/FeaturedProducts'
-import About from '../about/About'
-import Footer from '../footer/Footer'
+import About from '../about/About';
+import Footer from '../footer/Footer';
 
 
-import headerImgMobile from '../../assets/home/mobile/image-header.jpg'
-import headerImgTablet from '../../assets/home/tablet/image-header.jpg'
-import headerImgDesktop from '../../assets/home/desktop/image-hero.jpg'
+import headerImgMobile from '../../assets/home/mobile/image-header.jpg';
+import headerImgTablet from '../../assets/home/tablet/image-header.jpg';
+import headerImgDesktop from '../../assets/home/desktop/image-hero.jpg';
+
 
 
  const Home = () => {
@@ -30,7 +31,7 @@ import headerImgDesktop from '../../assets/home/desktop/image-hero.jpg'
                  <p className='fetured-hedphones__overline overline'>new product</p>
                  <h4 className='fetured-hedphones__title'>XX99 Mark II HeadphoneS</h4>
                  <p className='fetured-hedphones__sub-title'>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-                 <Link className='link-btn-orange hearo-btn' to='/products/XX99 Mark II HeadphoneS'>SEE PRODUCT</Link>
+                 <Link className='link-btn-orange hearo-btn' to='/category/xx99-mark-two-headphones'>SEE PRODUCT</Link>
              </div>
 
              <PageNav/>

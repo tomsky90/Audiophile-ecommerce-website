@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import featuredSpeakerImgMobile from '../../assets/home/mobile/image-speaker-zx9.png';
 import featuredSpeakerImgTablet from '../../assets/home/tablet/image-speaker-zx9.png';
 import featuredSpeakerImgDesktop from '../../assets/home/desktop/image-speaker-zx9.png';
-import bgcImage from '../../assets/home/desktop/pattern-circles.svg'
-import featuredSecondSpeakerMobile from '../../assets/home/mobile/image-speaker-zx7.jpg'
-import featuredSecondSpeakerTablet from '../../assets/home/tablet/image-speaker-zx7.jpg'
-import featuredSecondSpeakerDesktop from '../../assets/home/desktop/image-speaker-zx7.jpg'
-import featuredThirdEarphonsMobile from '../../assets/home/mobile/image-earphones-yx1.jpg'
-import featuredThirdEarphonsTablet from '../../assets/home/tablet/image-earphones-yx1.jpg'
-import featuredThirdEarphonsDesktop from '../../assets/home/desktop/image-earphones-yx1.jpg'
+import bgcImage from '../../assets/home/desktop/pattern-circles.svg';
+import featuredSecondSpeakerMobile from '../../assets/home/mobile/image-speaker-zx7.jpg';
+import featuredSecondSpeakerTablet from '../../assets/home/tablet/image-speaker-zx7.jpg';
+import featuredSecondSpeakerDesktop from '../../assets/home/desktop/image-speaker-zx7.jpg';
+import featuredThirdEarphonsMobile from '../../assets/home/mobile/image-earphones-yx1.jpg';
+import featuredThirdEarphonsTablet from '../../assets/home/tablet/image-earphones-yx1.jpg';
+import featuredThirdEarphonsDesktop from '../../assets/home/desktop/image-earphones-yx1.jpg';
+
 
 
 
@@ -32,7 +33,7 @@ const FeaturedProducts = () => {
                     <h2 className='featured-first__title'>zx9 <br/> Speaker</h2>
                     <p className='featured-first__description'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
 
-                    <Link className='link-btn-black' to='/products/zx9-speaker'>SEE product</Link>
+                    <Link className='link-btn-black' to='/category/zx9-speaker'>SEE product</Link>
                 </div>
                 
             </div>
@@ -50,7 +51,7 @@ const FeaturedProducts = () => {
                     <h2 className="featured-second__title">
                         zx7 speaker
                     </h2>
-                    <Link className='link-btn-transparent featured-second__link-btn' to='/products/zx7-speaker'>
+                    <Link className='link-btn-transparent featured-second__link-btn' to='/category/zx7-speaker'>
                         SEE product
                     </Link>
 
@@ -74,7 +75,7 @@ const FeaturedProducts = () => {
                     <h2 className='featured-third__title'>
                         YX1 EARPHONES
                     </h2>
-                    <Link className='link-btn-transparent featured-third__link-btn' to='/products/YX1-EARPHONES'>
+                    <Link className='link-btn-transparent featured-third__link-btn' to='/category/yx1-earphones'>
                         SEE product
                     </Link>
                 </div>

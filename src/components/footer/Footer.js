@@ -8,6 +8,8 @@ import instagramIcon from '../../assets/shared/desktop/icon-instagram.svg';
 
 
 
+
+
 const Footer = () => {
     return (  
         <footer className='footer'>
