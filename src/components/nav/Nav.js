@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import Modal from '../modal/Modal';
 
 import hamburgerIcon from '../../assets/shared/tablet/icon-hamburger.svg';
 import logo from '../../assets/shared/desktop/logo.svg';
@@ -15,8 +16,14 @@ const Navigation = () => {
 
     const [isMobileNavActive, setIsMobileNavActive] = useState(false);
 
+    const [isModalActive, setIsModalActive] = useState(false);
+
     const toggleMobileNav =  () => {
         setIsMobileNavActive(!isMobileNavActive)
+    }
+
+    const toggleModalActive = () => {
+        setIsModalActive(!isModalActive)
     }
 
 
@@ -24,6 +31,8 @@ const Navigation = () => {
         <div>
             <div className={isMobileNavActive ? 'blure blure--active' : 'blure'}></div>
             <header className='header'>
+            
+           
                     <div className='mobile-nav__hamburger-icon-container'>
                         <img onClick={toggleMobileNav}  className='mobile-nav__hamburger-icon' 
                             src={`${hamburgerIcon}` }
@@ -63,7 +72,7 @@ const Navigation = () => {
 
 
                 <div className='cart-icon__container'>
-                    <img src={`${cartIcon}`} alt="cart icon"/>
+                    <img onClick={toggleModalActive} src={`${cartIcon}`} alt="cart icon"/>
                 </div>
                 
             </header>
@@ -101,8 +110,9 @@ const Navigation = () => {
                 
                     
             
-            
-           
+                <Modal open={isModalActive}>
+                    hello world
+                </Modal>
             
             
         </div>
