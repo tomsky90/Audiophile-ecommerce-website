@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../appContext/App.context';
 
 import PageNav from '../pageNav/PageNav';
 import About from '../about/About';
@@ -9,6 +10,8 @@ import Footer from '../footer/Footer';
 
 
 const ProductPage = ({match}) => {
+
+    const {cartItems,  onAdd} = useContext(AppContext);
 
     const [productData, setProductData] = useState([]);
     const [quantityInput, setQuantityInput] = useState(1);
@@ -75,7 +78,7 @@ const displayProduct = productData.map(product => <div className='product-contai
                             readOnly
                             />
                         </div>
-                        <button className='link-btn-orange add-cart-btn'>add to cart</button>
+                        <button onClick={() => {onAdd(product, quantityInput)}} className='link-btn-orange add-cart-btn'>add to cart</button>
                     </div>
                 </article>
         </div>
@@ -154,6 +157,7 @@ const displayProduct = productData.map(product => <div className='product-contai
             <PageNav/>
             <About/>
             <Footer/>
+            {console.log(cartItems)}
         </div>
      );
 }

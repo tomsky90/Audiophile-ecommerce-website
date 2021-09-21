@@ -11,11 +11,15 @@ import instagramIcon from '../../assets/shared/desktop/icon-instagram.svg';
 
 
 const Footer = () => {
+
+    const srcollToTop = () => {
+        window.scrollTo(0, 0);
+    }
     return (  
         <footer className='footer'>
             <div className='footer-decoration'></div>
             <div className='footer__logo-container'>
-                <Link to='/'>
+                <Link onClick={srcollToTop} to='/'>
                     <img src={logoImg} alt="logo"/>
                 </Link>
                 
