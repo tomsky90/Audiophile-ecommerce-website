@@ -24,8 +24,13 @@ const Navigation = () => {
         modalOnClose()
     }
 
+    const mobileNavOnClose = () => {
+        setIsMobileNavActive(false)
+    }
+
     const toggleModalActive = () => {
         setIsModalActive(!isModalActive)
+        mobileNavOnClose()
     }
 
     const modalOnClose = () => {
@@ -40,13 +45,13 @@ const Navigation = () => {
             
            
                     <div className='mobile-nav__hamburger-icon-container'>
-                        <img onClick={toggleMobileNav}  className='mobile-nav__hamburger-icon' 
+                        <img onClick={toggleMobileNav} className='mobile-nav__hamburger-icon' 
                             src={`${hamburgerIcon}` }
                             alt='menu icon'/>
                     </div>
                 
                 <div className='logo-container'>
-                <Link onClick={modalOnClose} to='/'>
+                <Link onClick={() => {modalOnClose(); mobileNavOnClose()}} to='/'>
                     <img src={logo} alt="logo"/>
                 </Link>
                 </div>

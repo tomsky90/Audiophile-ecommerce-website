@@ -8,7 +8,7 @@ import { formatPrice } from '../utility/utilityFunctions';
 
 const Cart = () => {
 
-    const { cartItems, onAdd, onRemove, calculateTotalPrice} = useContext(AppContext);
+    const { cartItems, onAdd, onRemove, calculateTotalPrice, removeAllItems} = useContext(AppContext);
    
 
     const cartItemsList = cartItems.map(item => <div className='cart-item-container' key={item.id}>
@@ -33,7 +33,7 @@ const Cart = () => {
         <div className='cart-wrapper'>
             <div className='cart-header'>
                 <h2>Cart ({cartItems.length})</h2>
-                <button className='cart-remove-btn'>Remove all</button>
+                <button onClick={removeAllItems} className='cart-remove-btn'>Remove all</button>
             </div>
 
             {cartItems.length === 0 && <h2>No items in your cart</h2>}

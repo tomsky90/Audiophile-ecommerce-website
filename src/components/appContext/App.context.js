@@ -25,11 +25,15 @@ const AppProvider = ({children}) => {
         }
     }
 
+    const removeAllItems = () => {
+        setCartItems([])
+    }
+
     const calculateTotalPrice = () => cartItems.reduce((a, c) => a + c.price * c.qty, 0);
 
     return (
         <AppContext.Provider
-            value={{cartItems, onAdd, onRemove, calculateTotalPrice}}
+            value={{cartItems, onAdd, onRemove, calculateTotalPrice, removeAllItems}}
         >
             {children}
         </AppContext.Provider>
