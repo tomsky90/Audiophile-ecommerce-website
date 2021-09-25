@@ -3,6 +3,8 @@ import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../appContext/App.context';
 
+import { formatPrice } from '../utility/utilityFunctions';
+
 import PageNav from '../pageNav/PageNav';
 import About from '../about/About';
 import Footer from '../footer/Footer';
@@ -68,7 +70,7 @@ const displayProduct = productData.map(product => <div className='product-contai
                         {product.name}
                     </h1>
                     <p className='product-container__product-text'>{product.description}</p>
-                    <p className='product-container__product-price'>{`$ ${product.price.toLocaleString()}`}</p>
+                    <p className='product-container__product-price'>{formatPrice(product.price)}</p>
                     <div className='product-form'>
                         <div className='input-wrapper'>
                             <span onClick={decreaseValue} className='decrease-quantity'>-</span>

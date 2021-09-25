@@ -16,9 +16,20 @@ const AppProvider = ({children}) => {
         }
     }
 
+    const onRemove = (product, quantity) => {
+        const exist = cartItems.find(cartItem => cartItem.id === product.id);
+        if(exist.qty ===1) {
+            setCartItems(cartItems.filter(cartItem => cartItem.id !== product.id))
+        } else {
+            setCartItems(cartItems.map(cartItem => cartItem.id === product.id ? {...exist, qty: exist.qty - quantity} : cartItem))
+        }
+    }
+
+    const calculateTotalPrice = () => cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+
     return (
         <AppContext.Provider
-            value={{cartItems, onAdd}}
+            value={{cartItems, onAdd, onRemove, calculateTotalPrice}}
         >
             {children}
         </AppContext.Provider>

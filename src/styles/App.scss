@@ -10,6 +10,7 @@
 @import 'about.scss';
 @import 'footer.scss';
 @import 'modal.scss';
+@import 'cart.scss';
 
 
 * {
@@ -22,5 +23,9 @@
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+    overflow-y: hidden;
+}
+
+body.modal-active {
     overflow-y: hidden;
 }

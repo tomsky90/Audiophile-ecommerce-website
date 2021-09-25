@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Modal from '../modal/Modal';
+import Cart from '../cart/Cart';
 
 import hamburgerIcon from '../../assets/shared/tablet/icon-hamburger.svg';
 import logo from '../../assets/shared/desktop/logo.svg';
@@ -20,10 +21,15 @@ const Navigation = () => {
 
     const toggleMobileNav =  () => {
         setIsMobileNavActive(!isMobileNavActive)
+        modalOnClose()
     }
 
     const toggleModalActive = () => {
         setIsModalActive(!isModalActive)
+    }
+
+    const modalOnClose = () => {
+        setIsModalActive(false)
     }
 
 
@@ -40,7 +46,7 @@ const Navigation = () => {
                     </div>
                 
                 <div className='logo-container'>
-                <Link to='/'>
+                <Link onClick={modalOnClose} to='/'>
                     <img src={logo} alt="logo"/>
                 </Link>
                 </div>
@@ -85,7 +91,9 @@ const Navigation = () => {
                          <li className='mobile-nav__link-container'>
                            <img src={`${headphons}`} alt=" headphones"/>
                            <h6 className='mobile-nav__title'>headphons</h6>
-                            <NavLink className='nav-link-btn' to='/headphones' onClick={toggleMobileNav}>
+                            <NavLink className='nav-link-btn' to='/headphones' 
+                            onClick={() => {
+                                toggleMobileNav()}}>
                                <p className=''>shop</p> 
                             </NavLink>
                        </li>
@@ -111,7 +119,7 @@ const Navigation = () => {
                     
             
                 <Modal open={isModalActive}>
-                    hello world
+                    <Cart/>
                 </Modal>
             
             
