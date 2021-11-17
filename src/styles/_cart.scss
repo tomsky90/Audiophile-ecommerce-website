@@ -122,3 +122,10 @@
     margin-top: 20px;
     text-align: center;
 }
+
+.cart-remove-btn:hover {
+    @media(min-width: 1280px) {
+        color: $Primary-Orange;
+        cursor: pointer;
+    }
+}

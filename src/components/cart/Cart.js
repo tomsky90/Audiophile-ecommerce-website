@@ -8,7 +8,7 @@ import { formatPrice } from '../utility/utilityFunctions';
 
 const Cart = () => {
 
-    const { cartItems, onAdd, onRemove, calculateTotalPrice, removeAllItems} = useContext(AppContext);
+    const { cartItems, onAdd, onRemove, itemsPrice, removeAllItems, modalOnClose} = useContext(AppContext);
    
 
     const cartItemsList = cartItems.map(item => <div className='cart-item-container' key={item.id}>
@@ -42,9 +42,9 @@ const Cart = () => {
             
         <div className='price-container'>
             <p className='price-container__title'>TOTAL</p> 
-            <p className='price-container__total-price'>{formatPrice(calculateTotalPrice())}</p>
+            <p className='price-container__total-price'>{formatPrice(itemsPrice)}</p>
         </div>
-        <Link className='link-btn-orange checkout-link' to='/checkout'>CHECKOUT</Link>
+        <Link onClick={modalOnClose} className='link-btn-orange checkout-link' to='/checkout'>CHECKOUT</Link>
         </div>
      );
 }

@@ -1,0 +1,171 @@
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.checkout-page-container {
+    background-color: $Primary-Gray;
+    padding: 20px 5% 100px 5%;
+}
+
+.checkout-wrapper {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    & h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    & label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        &.error {
+            color: red;
+        }
+    }
+    & .input-wrapper {
+        width: 100%;
+    }
+    & input  {
+        width: 100%;
+        padding: 10px 20px;
+        border: 2px solid $Primary-Gray;
+        border-radius: 10px;
+        outline: none;
+        &.active {
+            border-color: $Primary-Orange;
+        }
+        &.error {
+            border-color: red;
+        }
+    }
+    & .sub-title {
+        margin-top: 20px;
+        font-size: 13px;
+    }
+    & .payment-method-title {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    & .payment-method-label {
+        display: flex;
+        align-items: center;
+        border: 2px solid $Primary-Gray;
+        border-radius: 10px;
+        line-height: 25px;
+        padding: 10px 20px;
+    }
+    & .payment-method-label.active {
+        border-color: $Primary-Orange;
+    }
+}
+
+#eMoneyInput {
+    margin-right: 10px;
+}
+#cashOnDeliveryInput {
+    margin-right: 10px;
+}
+
+input[type="radio"] {
+    /* remove standard background appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* create custom radiobutton appearance */
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    /* background-color only for content */
+    background-clip: content-box;
+    border: 2px solid #bbbbbb;
+    border-radius: 50%;
+  }
+  input[type="radio"]:checked {
+    background-color: $Primary-Orange;
+  }
+
+  .cash-on-delivery-wrapper {
+      margin-top: 30px;
+      color:lighten(black, 30%);
+      
+  }
+
+  .summary-wrapper {
+      background-color: #fff;
+      margin-top: 30px;
+      padding: 20px 20px 20px 20px;
+      border-radius: 8px;
+      &__item-wrapper {
+          display: flex;
+          margin-bottom: 20px;
+      }
+      &__img-wrapper {
+          width: 25%;
+          margin-right: 20px;
+          & img {
+              width: 100%;
+              border-radius: 8px;
+          }
+      }
+      &__txt-wrapper {
+          padding-top: 5%;
+          flex-grow: 1;
+      }
+      & h2 {
+          font-size: 18px;
+          margin-bottom: 20px;
+      }
+      & h4 {
+          font-size: 15px;
+          font-weight: bold;
+          line-height: normal;
+      }
+      & p {
+          font-size: 14px;
+          color: lighten(black, 30%);
+      }
+      &__qty-container {
+          padding-top: 5%;
+      }
+  }
+
+  .pricing-wrapper {
+      & h3 {
+          font-size: 15px;
+          font-weight: 200;
+      } 
+      & span {
+          font-size: 18px;
+          font-weight: bold;
+      } 
+      &__price-wrapper {
+          display: flex;
+          justify-content: space-between;
+      }
+      &__grand-total-price {
+        color: $Primary-Orange;
+    }
+    &__grand-total-wrapper {
+        margin-top: 20px;
+    }
+  }
+
+  .submit-btn {
+      border: none;
+      outline: none;
+      width: 100%;
+      margin-top: 20px;
+  }
+
+  

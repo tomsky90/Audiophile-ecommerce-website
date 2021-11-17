@@ -5,6 +5,7 @@ import Nav from './components/nav/Nav';
 import Home from './components/home/Home';
 import CategoryPage from './components/categoryPage/CategoryPage';
 import ProductPage from './components/productPage/ProductPage';
+import Checkout from './components/checkout/Checkout';
 import './styles/App.scss';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Nav/>
             <Switch>
               <Route path='/' exact component={Home}/>
+              <Route path='/checkout' exact component={Checkout}/>
               <Route path='/:category' exact component={CategoryPage}/>
               <Route path='/category/:product' exact component={ProductPage}/>
             </Switch>

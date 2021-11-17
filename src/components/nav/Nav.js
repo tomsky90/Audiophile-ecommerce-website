@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Modal from '../modal/Modal';
 import Cart from '../cart/Cart';
@@ -11,31 +11,26 @@ import headphons from '../../assets/shared/desktop/image-headphones.png';
 import speakers from '../../assets/shared/desktop/image-speakers.png';
 import earphones from '../../assets/shared/desktop/image-earphones.png';
 
+import { AppContext } from '../appContext/App.context';
+
 // import '../../styles/nav.scss'
 
 const Navigation = () => {
 
     const [isMobileNavActive, setIsMobileNavActive] = useState(false);
 
-    const [isModalActive, setIsModalActive] = useState(false);
+        const {isModalActive, modalOnClose, toggleModalActive} = useContext(AppContext);
 
     const toggleMobileNav =  () => {
         setIsMobileNavActive(!isMobileNavActive)
-        modalOnClose()
+       
     }
 
     const mobileNavOnClose = () => {
         setIsMobileNavActive(false)
     }
 
-    const toggleModalActive = () => {
-        setIsModalActive(!isModalActive)
-        mobileNavOnClose()
-    }
-
-    const modalOnClose = () => {
-        setIsModalActive(false)
-    }
+    
 
 
     return ( 
@@ -45,7 +40,7 @@ const Navigation = () => {
             
            
                     <div className='mobile-nav__hamburger-icon-container'>
-                        <img onClick={toggleMobileNav} className='mobile-nav__hamburger-icon' 
+                        <img onClick={() => {toggleMobileNav(); modalOnClose()}} className='mobile-nav__hamburger-icon' 
                             src={`${hamburgerIcon}` }
                             alt='menu icon'/>
                     </div>
@@ -83,7 +78,7 @@ const Navigation = () => {
 
 
                 <div className='cart-icon__container'>
-                    <img onClick={toggleModalActive} src={`${cartIcon}`} alt="cart icon"/>
+                    <img onClick={() => {toggleModalActive(); mobileNavOnClose()}} src={`${cartIcon}`} alt="cart icon"/>
                 </div>
                 
             </header>
@@ -123,7 +118,10 @@ const Navigation = () => {
                 
                     
             
-                <Modal open={isModalActive}>
+                <Modal 
+                    open={isModalActive}
+                    onClose={modalOnClose}
+                    >
                     <Cart/>
                 </Modal>
             

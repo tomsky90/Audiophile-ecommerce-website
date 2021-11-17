@@ -1,11 +1,22 @@
-import React, { createContext } from 'react';
+import React, { createContext, } from 'react';
 import { useState } from 'react';
 
  export const AppContext = createContext();
 
 const AppProvider = ({children}) => {
 
-    const [cartItems, setCartItems] = useState([])
+
+    const [cartItems, setCartItems] = useState([]);
+    const [isModalActive, setIsModalActive] = useState(false);
+
+    const modalOnClose = () => {
+        setIsModalActive(false)
+    }
+
+    const toggleModalActive = () => {
+        setIsModalActive(!isModalActive)
+    }
+
 
     const onAdd = (product, quantity) => {
         const exist = cartItems.find(cartItem => cartItem.id === product.id);
@@ -29,11 +40,25 @@ const AppProvider = ({children}) => {
         setCartItems([])
     }
 
-    const calculateTotalPrice = () => cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+    const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+    const taxPrice = itemsPrice * 0.20;
+    const shippingPrice = cartItems.length === 0 ? 0 : 50;
+    const grandTotalPrice =  cartItems.length < 1 ? 0 : itemsPrice + shippingPrice;
 
     return (
         <AppContext.Provider
-            value={{cartItems, onAdd, onRemove, calculateTotalPrice, removeAllItems}}
+            value={{cartItems,
+                 onAdd,
+                 onRemove,
+                 itemsPrice, 
+                 removeAllItems, 
+                 isModalActive, 
+                 modalOnClose, 
+                 toggleModalActive,
+                 taxPrice,
+                 shippingPrice,
+                 grandTotalPrice
+                }}
         >
             {children}
         </AppContext.Provider>
