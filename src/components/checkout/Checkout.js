@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { AppContext } from '../appContext/App.context';
 
 import Footer from '../footer/Footer';
-import Modal from '../modal/Modal';
+import CheckoutModal from '../modal/CheckoutModal';
+import CheckoutMessage from './CheckoutMessage';
 
 import { formatName } from '../utility/utilityFunctions';
 import { formatPrice } from '../utility/utilityFunctions';
@@ -11,7 +12,10 @@ import { formatPrice } from '../utility/utilityFunctions';
 
 const Checkout = () => {
 
-    const { cartItems, itemsPrice, taxPrice, shippingPrice, grandTotalPrice, isModalActive, modalOnClose, toggleModalActive } = useContext(AppContext)
+    const { cartItems, itemsPrice, taxPrice, shippingPrice, grandTotalPrice } = useContext(AppContext)
+
+    const [checkoutModalActive, setCheckoutModalActive] = useState(false)
+
 
     const [inputs, setInputs] = useState({
         userName: '',
@@ -48,6 +52,15 @@ const Checkout = () => {
         
       }
 
+      const showModal = () => {
+        setCheckoutModalActive(true)
+        srcollToTop()
+    }
+
+      const srcollToTop = () => {
+        window.scrollTo(0, 0);
+    }
+
     const handleSubmit= (e) => {
         e.preventDefault()
 
@@ -79,7 +92,10 @@ const Checkout = () => {
                 usereMoneyPin: false,
             })
 
-            console.log('formularz wyslany')
+            srcollToTop();
+            showModal();
+
+            
         } else {
             setErrors({
                 userName: !validation.userName,
@@ -159,7 +175,7 @@ const Checkout = () => {
         <div>
         <div className='checkout-page-container'>
             
-            <Link to='/'>Go Back</Link>
+            <Link className='go-back-link' to='/'>Go Back</Link>
             <form onSubmit={handleSubmit}>
                 <div className='checkout-wrapper'>
                 <h2>Checkout</h2>
@@ -208,7 +224,7 @@ const Checkout = () => {
                     </div>
                     <div className='shipping-info-wrapper'>
                         <h3 className='sub-title'>Shipping info</h3>
-                        <div className='input-wrapper'>
+                        <div className='input-wrapper user-adres-input-wrapper'>
                             <label htmlFor='addressInput' className={errors.userAdress ? 'error' : undefined}>Your Addres
                                 {errors.userAdress && <span className='error-message'>{messages.field_required}</span>}
                             </label>
@@ -265,47 +281,55 @@ const Checkout = () => {
                     <h2 className='sub-title'>Payment details</h2>
                     <div className='input-wrapper'>
                             <h4 className='payment-method-title'>payment method</h4>
-                            <label  className={ inputs.paymentMethod === 'e-money' ? 'payment-method-label active' :'payment-method-label'}
-                            htmlFor='eMoneyInput'>
-                                <input 
-                                    type='radio'
-                                    defaultChecked
-                                    onChange={handleChange}
-                                    id='eMoneyInput'
-                                    value='e-money'
-                                    name='paymentMethod'
-                                />
-                            e-Money</label>
-                            <label className={ inputs.paymentMethod === 'cash on delivery' ? 'payment-method-label active' :'payment-method-label'} htmlFor='cashOnDeliveryInput' >
-                                <input 
-                                    type='radio'
-                                    onChange={handleChange}
-                                    id='cashOnDeliveryInput'
-                                    value='cash on delivery'
-                                    name='paymentMethod'
-                                />
-                            Cash on Delivery</label>
-                            {inputs.paymentMethod === 'e-money' && <div>
-                                <label htmlFor="e-money-number" className={errors.usereMoneyNumber ? 'error' : undefined}>e-Money Number {errors.usereMoneyNumber && <span className='error-message'>{messages.field_required}</span>}</label>
-                                <input className={errors.usereMoneyNumber ? 'error' : undefined}
-                                    onClick={(e) => {handleClick(e)}}
-                                    type='number'
-                                    placeholder='238521993'
-                                    value={inputs.eMoneyNumber}
-                                    onChange={handleChange}
-                                    id='e-money-number'
-                                    name='eMoneyNumber'
-                                />
-                                <label htmlFor="e-money-pin" className={errors.usereMoneyNumber ? 'error' : undefined}>e-Money Pin {errors.usereMoneyNumber && <span className='error-message'>{messages.field_required}</span>}</label>
-                                <input className={errors.usereMoneyNumber ? 'error' : undefined}
-                                    onClick={(e) => {handleClick(e)}}
-                                    type='number'
-                                    placeholder='238521993'
-                                    value={inputs.eMoneyPin}
-                                    onChange={handleChange}
-                                    id='e-money-pin'
-                                    name='eMoneyPin'
-                                />
+                            <div className='payment-method-inputs-wrapper'>
+                                <label  className={ inputs.paymentMethod === 'e-money' ? 'payment-method-label active' :'payment-method-label'}
+                                htmlFor='eMoneyInput'>
+                                    <input 
+                                        type='radio'
+                                        defaultChecked
+                                        onChange={handleChange}
+                                        id='eMoneyInput'
+                                        value='e-money'
+                                        name='paymentMethod'
+                                    />
+                                e-Money</label>
+                                <label className={ inputs.paymentMethod === 'cash on delivery' ? 'payment-method-label active' :'payment-method-label'} htmlFor='cashOnDeliveryInput' >
+                                    <input 
+                                        type='radio'
+                                        onChange={handleChange}
+                                        id='cashOnDeliveryInput'
+                                        value='cash on delivery'
+                                        name='paymentMethod'
+                                    />
+                                Cash on Delivery</label>
+                            </div>
+                            {inputs.paymentMethod === 'e-money' && <div className='payment-numbers-wrapper'>
+                                <div className='input-wrapper'>
+                                    <label htmlFor="e-money-number" className={errors.usereMoneyNumber ? 'error' : undefined}>e-Money Number {errors.usereMoneyNumber && <span className='error-message'>{messages.field_required}</span>}</label>
+                                    <input className={errors.usereMoneyNumber ? 'error' : undefined}
+                                        onClick={(e) => {handleClick(e)}}
+                                        type='number'
+                                        placeholder='238521993'
+                                        value={inputs.eMoneyNumber}
+                                        onChange={handleChange}
+                                        id='e-money-number'
+                                        name='eMoneyNumber'
+                                    />
+                                </div>
+
+                                <div className='input-wrapper'>
+                                    <label htmlFor="e-money-pin" className={errors.usereMoneyNumber ? 'error' : undefined}>e-Money Pin {errors.usereMoneyNumber && <span className='error-message'>{messages.field_required}</span>}</label>
+                                    <input className={errors.usereMoneyNumber ? 'error' : undefined}
+                                        onClick={(e) => {handleClick(e)}}
+                                        type='number'
+                                        placeholder='238521993'
+                                        value={inputs.eMoneyPin}
+                                        onChange={handleChange}
+                                        id='e-money-pin'
+                                        name='eMoneyPin'
+                                    />
+                                </div>
+        
                             </div>}
                             {inputs.paymentMethod === 'cash on delivery' && <div className='cash-on-delivery-wrapper'>
                                 <p>The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
@@ -350,11 +374,16 @@ const Checkout = () => {
                                 <span className='pricing-wrapper__grand-total-price'>{formatPrice(grandTotalPrice)}</span>
                             </div>
                         </div>
-                        <button onClick={toggleModalActive} className='submit-btn link-btn-orange' type='submit'>CONTINUE & PAY</button>
+                        <button className='submit-btn link-btn-orange' type='submit'>CONTINUE & PAY</button>
                 </div>
             </form>
             
         </div>
+        <CheckoutModal open={checkoutModalActive}
+
+        >
+           <CheckoutMessage/>
+        </CheckoutModal>
         
         <Footer/>
         </div>

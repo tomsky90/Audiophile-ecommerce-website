@@ -3,12 +3,13 @@ import ReactDom from 'react-dom';
 
 const CheckoutModal = ({ open, children }) => {
 
-   const body = document.querySelector('body');
-   if(!open) {
-      body.classList = '';
-   } else {
-      body.classList = 'modal-active';
-   }
+    const body = document.querySelector('body');
+    if(open) {
+        body.classList.add('modal-active');
+       
+    } 
+ 
+    
 
    if(!open) {
       return null
@@ -16,8 +17,8 @@ const CheckoutModal = ({ open, children }) => {
    else {
     return ReactDom.createPortal( 
         <>
-        <div className='modal-overlay'></div>
-        <div className='modal'>
+        <div className='modal-overlay checkout-overlay'></div>
+        <div className='modal checkout-modal'>
             
             {children}
         </div>

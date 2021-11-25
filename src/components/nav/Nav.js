@@ -19,7 +19,7 @@ const Navigation = () => {
 
     const [isMobileNavActive, setIsMobileNavActive] = useState(false);
 
-        const {isModalActive, modalOnClose, toggleModalActive} = useContext(AppContext);
+        const {isModalActive, modalOnClose, toggleModalActive, cartItems} = useContext(AppContext);
 
     const toggleMobileNav =  () => {
         setIsMobileNavActive(!isMobileNavActive)
@@ -79,6 +79,7 @@ const Navigation = () => {
 
                 <div className='cart-icon__container'>
                     <img onClick={() => {toggleModalActive(); mobileNavOnClose()}} src={`${cartIcon}`} alt="cart icon"/>
+                    {cartItems.length > 0 && <div><span>{cartItems.length}</span></div>}
                 </div>
                 
             </header>

@@ -22,6 +22,7 @@ const Modal = ({ open, children, onClose }) => {
             {children}
         </div>
         </>, document.getElementById('portal')
+        
      );
    }
     

@@ -44,7 +44,9 @@ const Cart = () => {
             <p className='price-container__title'>TOTAL</p> 
             <p className='price-container__total-price'>{formatPrice(itemsPrice)}</p>
         </div>
-        <Link onClick={modalOnClose} className='link-btn-orange checkout-link' to='/checkout'>CHECKOUT</Link>
+        {cartItems.length > 0 && <Link onClick={modalOnClose} className='link-btn-orange checkout-link' to='/checkout'>CHECKOUT</Link>}
+        {cartItems.length === 0 && <p className='link-btn-orange checkout-link' to='/checkout'>CHECKOUT</p>}
+        
         </div>
      );
 }

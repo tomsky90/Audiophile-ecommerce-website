@@ -12,7 +12,25 @@ input::-webkit-inner-spin-button {
     padding: 20px 5% 100px 5%;
 }
 
+.billing-details {
+    &.checkout-wrapper .input-wrapper input {
+        @media(min-width: 700px) {
+            width: 50%;
+        }
+    }
+    
+}
+
+form {
+    @media(min-width: 1200px){
+        display: flex;
+    }
+}
+
 .checkout-wrapper {
+    @media(min-width: 1200px) {
+        width: 60%;
+    }
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
@@ -35,6 +53,33 @@ input::-webkit-inner-spin-button {
     & .input-wrapper {
         width: 100%;
     }
+    & .billing-details {
+        @media(min-width: 700px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        & .input-wrapper {
+            @media(min-width: 700px) {
+                width: 48%;
+            }
+        }
+    }
+    & .shipping-info-wrapper {
+        @media(min-width: 700px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        & .input-wrapper {
+            @media(min-width: 700px) {
+                width: 48%;
+            }
+        }
+        & .input-wrapper.user-adres-input-wrapper {
+            @media(min-width: 700px) {
+                width: 100%;
+            }
+        }
+    }
     & input  {
         width: 100%;
         padding: 10px 20px;
@@ -51,6 +96,43 @@ input::-webkit-inner-spin-button {
     & .sub-title {
         margin-top: 20px;
         font-size: 13px;
+        width: 100%;
+    } 
+    & .payment-details-wrapper {
+        @media(min-width: 700px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        & .input-wrapper {
+            @media(min-width: 700px) {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        & .payment-method-inputs-wrapper {
+            @media(min-width: 700px) {
+                width: 48%;
+            }
+        }
+        & .payment-numbers-wrapper {
+            @media(min-width: 700px) {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+            & .input-wrapper {
+                @media(min-width: 700px) {
+                    width: 48%;
+                }
+            }
+           
+        }
+        & .payment-method-title {
+            @media(min-width: 700px) {
+                width: 48%;
+            }
+        }
     }
     & .payment-method-title {
         font-size: 12px;
@@ -102,6 +184,12 @@ input[type="radio"] {
   }
 
   .summary-wrapper {
+      @media(min-width: 1200px) {
+          width: 35%;
+          height: 90%;
+          margin-top: 20px;
+          margin-left: 40px;
+      }
       background-color: #fff;
       margin-top: 30px;
       padding: 20px 20px 20px 20px;
@@ -111,6 +199,9 @@ input[type="radio"] {
           margin-bottom: 20px;
       }
       &__img-wrapper {
+          @media(min-width: 700px) {
+              width: 10%;
+          }
           width: 25%;
           margin-right: 20px;
           & img {
@@ -119,6 +210,9 @@ input[type="radio"] {
           }
       }
       &__txt-wrapper {
+        @media(min-width: 700px) {
+            padding-top: 2%;
+        }
           padding-top: 5%;
           flex-grow: 1;
       }
@@ -136,6 +230,9 @@ input[type="radio"] {
           color: lighten(black, 30%);
       }
       &__qty-container {
+        @media(min-width: 700px) {
+            padding-top: 2%;
+        }
           padding-top: 5%;
       }
   }
