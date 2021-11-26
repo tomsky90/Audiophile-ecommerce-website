@@ -27,7 +27,7 @@ const CheckoutMessage = () => {
                     <div className='checkout-message'>
                         <div className='checkout-message__item-wrapper'>
                                 <div className='checkout-message__img-wrapper'> 
-                                    <img src={`/assets/cart/image-${cartItems[0].slug}.jpg`} alt={cartItems[0].name} />
+                                    <img src={process.env.PUBLIC_URL + `/assets/cart/image-${cartItems[0].slug}.jpg`} alt={cartItems[0].name} />
                                 </div>
                                 <div className='checkout-message__txt-wrapper'>
                                     <h4 className='checkout-message__name'>{formatName(cartItems[0].name)}</h4>

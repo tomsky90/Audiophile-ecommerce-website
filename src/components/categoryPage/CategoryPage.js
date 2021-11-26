@@ -17,7 +17,7 @@ const CategoryPage = ({match}) => {
     }, [match.params.category])
 
     const getCategory = () => {
-        fetch('data.json')
+        fetch("./data.json")
             .then(response => response)
             .then(response => response.json())
             .then(data => {
@@ -33,10 +33,10 @@ const CategoryPage = ({match}) => {
         <article className='product' key={item.id}>
             <div className='product-img-container'>
                 <picture>
-                     <source media="(min-width: 1280px)" srcSet={item.image.desktop}/>
-                     <source media="(min-width: 700px)" srcSet={item.image.mobile}/>
-                     <source media="(min-width: 320px)" srcSet={item.image.mobile}/>
-                     <img src={item.image.mobile} alt={item.name}/>
+                     <source media="(min-width: 1280px)" srcSet={process.env.PUBLIC_URL + item.image.desktop}/>
+                     <source media="(min-width: 700px)" srcSet={process.env.PUBLIC_URL + item.image.mobile}/>
+                     <source media="(min-width: 320px)" srcSet={process.env.PUBLIC_URL + item.image.mobile}/>
+                     <img src={process.env.PUBLIC_URL + item.image.mobile} alt={item.name}/>
                 </picture>
                 
             </div>
@@ -55,6 +55,7 @@ const CategoryPage = ({match}) => {
     
     return (
         <div>
+            {console.log(categoryItems)}
             <div className='category-title'>
                 <h1>{match.params.category}</h1>
             </div>

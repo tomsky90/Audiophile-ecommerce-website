@@ -342,7 +342,7 @@ const Checkout = () => {
                     {cartItems.map(item => <div key={item.id}>
                         <div className='summary-wrapper__item-wrapper'>
                             <div className='summary-wrapper__img-wrapper'> 
-                                <img src={`/assets/cart/image-${item.slug}.jpg`} alt={item.name} />
+                                <img src={process.env.PUBLIC_URL + `/assets/cart/image-${item.slug}.jpg`} alt={item.name} />
                             </div>
                             <div className='summary-wrapper__txt-wrapper'>
                                 <h4>{formatName(item.name)}</h4>

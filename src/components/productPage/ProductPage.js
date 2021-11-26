@@ -25,7 +25,7 @@ const ProductPage = ({match}) => {
 
   
     const getData = () => {
-        fetch('../../data.json')
+        fetch(process.env.PUBLIC_URL + "/data.json")
             .then(response =>response)
             .then(response => response.json())
             .then(data => {
@@ -56,10 +56,10 @@ const displayProduct = productData.map(product => <div className='product-contai
         <div className='product-container__wrapper'>
             <div className='product-container__img-container'>
                 <picture>
-                    <source media='(min-width: 1280px)' srcSet={product.image.desktop}/>
-                    <source media='(min-width: 700px)' srcSet={product.image.tablet}/>
-                    <source media='(min-width:360px)' srcSet={product.image.mobile}/>
-                    <img src={product.image.mobile} alt={product.name}/>
+                    <source media='(min-width: 1280px)' srcSet={process.env.PUBLIC_URL + product.image.desktop}/>
+                    <source media='(min-width: 700px)' srcSet={process.env.PUBLIC_URL + product.image.tablet}/>
+                    <source media='(min-width:360px)' srcSet={process.env.PUBLIC_URL + product.image.mobile}/>
+                    <img src={process.env.PUBLIC_URL + product.image.mobile} alt={product.name}/>
                 </picture>
                 </div>
 
@@ -103,28 +103,28 @@ const displayProduct = productData.map(product => <div className='product-contai
             <div className='gallery-container__flex-wrap'>
                 <div className='gallery-container__first-img'>
                     <picture>
-                        <source media={'(min-width: 1280px)'} srcSet={product.gallery.first.desktop}/>
-                        <source media={'(min-width: 700px)'} srcSet={product.gallery.first.tablet}/>
-                        <source media={'(min-width: 320px)'} srcSet={product.gallery.first.mobile}/>
-                        <img src={product.gallery.first.mobile} alt='product.name'/>
+                        <source media={'(min-width: 1280px)'} srcSet={process.env.PUBLIC_URL + product.gallery.first.desktop}/>
+                        <source media={'(min-width: 700px)'} srcSet={process.env.PUBLIC_URL + product.gallery.first.tablet}/>
+                        <source media={'(min-width: 320px)'} srcSet={process.env.PUBLIC_URL + product.gallery.first.mobile}/>
+                        <img src={process.env.PUBLIC_URL + product.gallery.first.mobile} alt='product.name'/>
                     </picture>
                 </div>
                 <div className='gallery-container_second-img'>
                     <picture>
-                        <source media={'(min-width: 1280px)'} srcSet={product.gallery.second.desktop}/>
-                        <source media={'(min-width: 700px)'} srcSet={product.gallery.second.tablet}/>
-                        <source media={'(min-width: 320px)'} srcSet={product.gallery.second.mobile}/>
-                        <img src={product.gallery.second.mobile} alt='product.name'/>
+                        <source media={'(min-width: 1280px)'} srcSet={process.env.PUBLIC_URL + product.gallery.second.desktop}/>
+                        <source media={'(min-width: 700px)'} srcSet={process.env.PUBLIC_URL + product.gallery.second.tablet}/>
+                        <source media={'(min-width: 320px)'} srcSet={process.env.PUBLIC_URL + product.gallery.second.mobile}/>
+                        <img src={process.env.PUBLIC_URL + product.gallery.second.mobile} alt='product.name'/>
                     </picture>
                 </div>
             </div>
             <div className='gallery-container__flex-wrap-last-img'>
                 <div className='gallery-container__third-img'>
                 <picture>
-                        <source media={'(min-width: 1280px)'} srcSet={product.gallery.third.desktop}/>
-                        <source media={'(min-width: 700px)'} srcSet={product.gallery.third.tablet}/>
-                        <source media={'(min-width: 320px)'} srcSet={product.gallery.third.mobile}/>
-                        <img src={product.gallery.third.mobile} alt='product.name'/>
+                        <source media={'(min-width: 1280px)'} srcSet={process.env.PUBLIC_URL + product.gallery.third.desktop}/>
+                        <source media={'(min-width: 700px)'} srcSet={process.env.PUBLIC_URL + product.gallery.third.tablet}/>
+                        <source media={'(min-width: 320px)'} srcSet={process.env.PUBLIC_URL + product.gallery.third.mobile}/>
+                        <img src={ process.env.PUBLIC_URL + product.gallery.third.mobile} alt='product.name'/>
                     </picture>
                 </div>
             </div>
@@ -134,10 +134,10 @@ const displayProduct = productData.map(product => <div className='product-contai
             {product.others.map((item, index) => <div className='other-products__product-wrapper' key={index}>
                 <div className='other-products__img-container'>
                     <picture>
-                        <source media={'(min-width: 1280px)'} srcSet={item.image.desktop}/>
-                        <source media={'(min-width: 700px)'} srcSet={item.image.tablet}/>
-                        <source media={'(min-width: 320px)'} srcSet={item.image.mobile}/>
-                        <img src={item.image.mobile} alt='product.name'/>
+                        <source media={'(min-width: 1280px)'} srcSet={process.env.PUBLIC_URL + item.image.desktop}/>
+                        <source media={'(min-width: 700px)'} srcSet={process.env.PUBLIC_URL + item.image.tablet}/>
+                        <source media={'(min-width: 320px)'} srcSet={process.env.PUBLIC_URL + item.image.mobile}/>
+                        <img src={process.env.PUBLIC_URL + item.image.mobile} alt='product.name'/>
                     </picture>
                 </div>
                 <h3>{item.name}</h3>
