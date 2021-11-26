@@ -13,7 +13,7 @@ const Cart = () => {
 
     const cartItemsList = cartItems.map(item => <div className='cart-item-container' key={item.id}>
         <div className='cart-item-container__img-wrapper'> 
-            <img src={`/assets/cart/image-${item.slug}.jpg`} alt={item.name} />
+            <img src={process.env.PUBLIC_URL + `/assets/cart/image-${item.slug}.jpg`} alt={item.name} />
         </div>
         <div className='cart-item-container__txt-wrapper'>
             <h4>{formatName(item.name)}</h4>
